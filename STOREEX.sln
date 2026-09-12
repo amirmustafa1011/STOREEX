@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STOREEX", "STOREEX\STOREEX.csproj", "{B7C7F3A1-5C3D-4B9B-8C0F-7A0F2B4E9D11}"
+EndProject
+Global
+ GlobalSection(SolutionConfigurationPlatforms) = preSolution
+  Debug|Any CPU = Debug|Any CPU
+  Release|Any CPU = Release|Any CPU
+ EndGlobalSection
+ GlobalSection(ProjectConfigurationPlatforms) = postSolution
+  {B7C7F3A1-5C3D-4B9B-8C0F-7A0F2B4E9D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+  {B7C7F3A1-5C3D-4B9B-8C0F-7A0F2B4E9D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+  {B7C7F3A1-5C3D-4B9B-8C0F-7A0F2B4E9D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+  {B7C7F3A1-5C3D-4B9B-8C0F-7A0F2B4E9D11}.Release|Any CPU.Build.0 = Release|Any CPU
+ EndGlobalSection
+EndGlobal
