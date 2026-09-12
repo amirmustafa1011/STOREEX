@@ -1,0 +1,32 @@
+@{
+    ViewBag.Title = "Dashboard";
+    ViewBag.PageTitle = "Dashboard";
+}
+<div class="sx-grid">
+    <div class="sx-card"><div class="sx-kpi-label">Sales today</div><div class="sx-kpi-value">€@(((decimal)ViewBag.SalesToday).ToString("N2"))</div></div>
+    <div class="sx-card"><div class="sx-kpi-label">Sales this month</div><div class="sx-kpi-value">€@(((decimal)ViewBag.SalesMonth).ToString("N2"))</div></div>
+    <div class="sx-card"><div class="sx-kpi-label">Active customers</div><div class="sx-kpi-value">@ViewBag.Customers</div></div>
+    <div class="sx-card"><div class="sx-kpi-label">Low stock items</div><div class="sx-kpi-value">@ViewBag.LowStock</div></div>
+</div>
+<div class="sx-panel">
+    <h3>Sales performance</h3>
+    <div id="salesChart" style="height:330px"></div>
+    <div id="chartFallback" style="display:none;color:#718096">Kendo UI assets are not loaded yet. Add your licensed Telerik scripts to enable charts and grids.</div>
+</div>
+@section scripts{
+<script>
+(function(){
+    if (!window.kendo) { $('#chartFallback').show(); return; }
+    $.get('@Url.Action("MonthlySales","Dashboard")', function(data){
+        $('#salesChart').kendoChart({
+            legend:{visible:false},
+            series:[{type:'column',field:'Total',categoryField:'Month',name:'Sales'}],
+            dataSource:{data:data},
+            valueAxis:{labels:{format:'€{0:n0}'},line:{visible:false}},
+            categoryAxis:{majorGridLines:{visible:false}},
+            tooltip:{visible:true,format:'€{0:n2}'}
+        });
+    });
+})();
+</script>
+}
