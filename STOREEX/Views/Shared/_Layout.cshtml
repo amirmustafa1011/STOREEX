@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title · STOREEX</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/storeex.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <aside class="sx-sidebar">
+        <div class="sx-brand"><span class="sx-brand-mark">S</span><span>STOREEX</span></div>
+        <nav class="sx-nav">
+            <a href="@Url.Action("Index","Dashboard")">Dashboard</a>
+            <a href="@Url.Action("Index","POS")">POS</a>
+            <div class="sx-nav-label">SALES</div>
+            <a href="@Url.Action("Index","Invoices")">Invoices</a>
+            <a href="@Url.Action("Index","Customers")">Customers</a>
+            <div class="sx-nav-label">CATALOG</div>
+            <a href="@Url.Action("Index","Products")">Products</a>
+            <a href="@Url.Action("Index","Suppliers")">Suppliers</a>
+            <div class="sx-nav-label">INVENTORY</div>
+            <a href="@Url.Action("Index","Warehouses")">Warehouses</a>
+            <a href="@Url.Action("Index","Inventory")">Stock</a>
+            <a href="@Url.Action("Index","Purchases")">Purchases</a>
+            <div class="sx-nav-label">FINANCE</div>
+            <a href="@Url.Action("Index","Expenses")">Expenses</a>
+            <a href="@Url.Action("Index","Reports")">Reports</a>
+            <div class="sx-nav-label">SYSTEM</div>
+            <a href="@Url.Action("Index","Settings")">Settings</a>
+        </nav>
+    </aside>
+
+    <main class="sx-main">
+        <header class="sx-topbar">
+            <button class="sx-mobile-menu" type="button" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+            <div class="sx-topbar-title">@ViewBag.PageTitle</div>
+            <div class="sx-user">@User.Identity.Name</div>
+        </header>
+        <section class="sx-content">@RenderBody()</section>
+    </main>
+
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
