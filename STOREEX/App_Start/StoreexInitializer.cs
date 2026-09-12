@@ -1,0 +1,2 @@
+using STOREEX.Models; using System.Data.Entity;
+namespace STOREEX.App_Start { public static class StoreexInitializer { public static void Run(){Database.SetInitializer(new CreateDatabaseIfNotExists<StoreexDb>()); using(var db=new StoreexDb()){db.Database.Initialize(false);if(!db.Companies.Any()){db.Companies.Add(new Company{Name="STOREEX Demo",Currency="EUR",IsActive=true});db.SaveChanges();}}} } }
