@@ -1,0 +1,29 @@
+## Visual Studio / ASP.NET MVC 5
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+_ReSharper*/
+*.DotSettings.user
+App_Data/*.mdf
+App_Data/*.ldf
+*.log
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Telerik/Kendo licensed binaries/assets
+STOREEX/Scripts/kendo/
+STOREEX/Content/kendo/
+STOREEX/bin/Kendo.Mvc.dll
