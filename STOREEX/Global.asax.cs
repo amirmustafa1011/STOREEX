@@ -1,13 +1,2 @@
-using System.Web.Mvc;
-using System.Web.Routing;
-namespace STOREEX
-{
-    public class MvcApplication : System.Web.HttpApplication
-    {
-        protected void Application_Start()
-        {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
-    }
-}
+using System.Web.Mvc; using System.Web.Routing; using STOREEX.App_Start;
+namespace STOREEX { public class MvcApplication:System.Web.HttpApplication { protected void Application_Start(){AreaRegistration.RegisterAllAreas();RouteConfig.RegisterRoutes(RouteTable.Routes);StoreexInitializer.Run();} } }
